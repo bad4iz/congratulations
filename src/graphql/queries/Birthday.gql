@@ -1,0 +1,21 @@
+query ($id: ID!) {
+    book(id: $id) {
+        id
+        title
+        author
+        image
+        link
+        description
+        featured
+        category {
+            name
+            id
+            books {
+                title
+                id
+                author
+                image
+            }
+        }
+    }
+}
