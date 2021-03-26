@@ -1,58 +1,59 @@
 <template>
-  <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        text
-      >
-text
-      </v-btn>
+  <v-app :dark="getDark">
+    <NavigationDrawer />
+    <v-app-bar
+      app
+      :clipped-left="getPrimaryDrawer.clipped"
+      dark
+      absolute
+      color="red darken-4"
+    >
+      <v-app-bar-nav-icon
+        v-if="getPrimaryDrawer.type !== 'permanent'"
+        @click.stop="setPrimaryDrawerAction({ model: !getPrimaryDrawer.model })"
+      />
+      <v-toolbar-title>{{ $appConfig.titleApp }}</v-toolbar-title>
     </v-app-bar>
 
     <v-main>
-      <div id="nav">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
-      </div>
-      <router-view />
-      <HelloWorld />
+      <v-container fluid>
+        <router-view />
+      </v-container>
     </v-main>
+    <v-footer :inset="getFooter.inset" app>
+      <span class="px-3">&copy; {{ new Date().getFullYear() }}</span>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+  import { createNamespacedHelpers } from 'vuex';
 
-export default {
-  name: "App",
+  const {
+    mapGetters: mapGettersAppSettings,
+    mapActions: mapActionsAppSettings,
+  } = createNamespacedHelpers('appSettings');
 
-  components: {
-    HelloWorld,
-  },
-
-  data: () => ({
-    //
-  }),
-};
+  export default {
+    name: 'App',
+    components: {
+      NavigationDrawer: () => import('@/components/NavigationDrawer'),
+    },
+    data: () => ({}),
+    methods: {
+      ...mapActionsAppSettings([
+        'toggleDarkAction',
+        'setPrimaryDrawerAction',
+        'setFooterAction',
+      ]),
+    },
+    computed: {
+      ...mapGettersAppSettings([
+        'getDark',
+        'getDrawers',
+        'getPrimaryDrawer',
+        'getFooter',
+      ]),
+    },
+  };
 </script>
