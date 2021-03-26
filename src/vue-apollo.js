@@ -13,7 +13,8 @@ const AUTH_TOKEN = "apollo-token";
 
 // Http endpoint
 const httpEndpoint =
-  process.env.VUE_APP_GRAPHQL_HTTP || "http://37.143.15.242/graphiql";
+  process.env.VUE_APP_GRAPHQL_HTTP ||
+  "https://fakeql.com/graphql/b5d42e279363fc9c3b7afa1478608184";
 // Files URL root
 export const filesRoot =
   process.env.VUE_APP_FILES_ROOT ||
