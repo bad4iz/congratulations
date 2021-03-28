@@ -15,6 +15,18 @@ export const routeNavigationDrawer = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '@/views/Home'),
   },
+  {
+    path: '/calendar',
+    to: '/calendar',
+    icon: 'event',
+    name: 'calendar',
+    title: 'Календарь',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ '@/views/CalendarViews'),
+  },
 ];
 
 export const routeNavigationDrawerFooter = [
