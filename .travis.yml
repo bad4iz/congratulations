@@ -14,7 +14,7 @@ before_deploy: "echo 'ready?'"
 deploy:
   provider: heroku
   api_key:
-    master: $HEROKU_TOKEN
+    main: $HEROKU_TOKEN
     develop: $HEROKU_TOKEN
   app:
     main: congratulations-elocont
