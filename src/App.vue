@@ -1,59 +1,60 @@
 <template>
-  <v-app :dark="getDark">
-    <NavigationDrawer />
+  <v-app>
     <v-app-bar
       app
-      :clipped-left="getPrimaryDrawer.clipped"
+      color="primary"
       dark
-      absolute
-      color="red darken-4"
     >
-      <v-app-bar-nav-icon
-        v-if="getPrimaryDrawer.type !== 'permanent'"
-        @click.stop="setPrimaryDrawerAction({ model: !getPrimaryDrawer.model })"
-      />
-      <v-toolbar-title>{{ $appConfig.titleApp }}</v-toolbar-title>
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          transition="scale-transition"
+          width="40"
+        />
+
+        <v-img
+          alt="Vuetify Name"
+          class="shrink mt-1 hidden-sm-and-down"
+          contain
+          min-width="100"
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
+          width="100"
+        />
+      </div>
+
+      <v-spacer></v-spacer>
+
+      <v-btn
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+        text
+      >
+        <span class="mr-2">Latest Release</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
     </v-app-bar>
 
     <v-main>
-      <v-container fluid>
-        <router-view />
-      </v-container>
+      <HelloWorld/>
     </v-main>
-    <v-footer :inset="getFooter.inset" app>
-      <span class="px-3">&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
   </v-app>
 </template>
 
 <script>
-  import { createNamespacedHelpers } from 'vuex';
+import HelloWorld from './components/HelloWorld';
 
-  const {
-    mapGetters: mapGettersAppSettings,
-    mapActions: mapActionsAppSettings,
-  } = createNamespacedHelpers('appSettings');
+export default {
+  name: 'App',
 
-  export default {
-    name: 'App',
-    components: {
-      NavigationDrawer: () => import('@/components/NavigationDrawer'),
-    },
-    data: () => ({}),
-    methods: {
-      ...mapActionsAppSettings([
-        'toggleDarkAction',
-        'setPrimaryDrawerAction',
-        'setFooterAction',
-      ]),
-    },
-    computed: {
-      ...mapGettersAppSettings([
-        'getDark',
-        'getDrawers',
-        'getPrimaryDrawer',
-        'getFooter',
-      ]),
-    },
-  };
+  components: {
+    HelloWorld,
+  },
+
+  data: () => ({
+    //
+  }),
+};
 </script>
