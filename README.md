@@ -1,5 +1,4 @@
 # congratulations
-s
 
 ## Project setup
 ```
