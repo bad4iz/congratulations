@@ -1,6 +1,20 @@
 query {
-    users {
-        id
-        firstname
+    eventType(code: "birthday") {
+        name
+        color
+        slug
+        events {
+            id
+            title
+            description
+            day
+            month
+            user {
+               id
+                name
+                avatar
+            }
+        }
     }
 }
+

@@ -1,0 +1,21 @@
+mutation(
+    $title: String
+    $description: String
+    $user_id: Int!
+    $day: String!
+    $month: String!
+    $start_date: Date!
+) {
+    createEvent(
+        title: $title
+        description: $description
+        user_id: $user_id
+        start_date: $start_date
+        day: $day
+        month: $month
+    ) {
+        id
+        title
+    }
+}
+

@@ -7,10 +7,10 @@
             Сегодня
           </v-btn>
           <v-btn fab text small color="grey darken-2" @click="prev">
-            <v-icon small> mdi-chevron-left </v-icon>
+            <v-icon small> mdi-chevron-left</v-icon>
           </v-btn>
           <v-btn fab text small color="grey darken-2" @click="next">
-            <v-icon small> mdi-chevron-right </v-icon>
+            <v-icon small> mdi-chevron-right</v-icon>
           </v-btn>
           <v-toolbar-title v-if="$refs.calendar">
             {{ $refs.calendar.title }}
@@ -20,7 +20,7 @@
             <template v-slot:activator="{ on, attrs }">
               <v-btn outlined color="grey darken-2" v-bind="attrs" v-on="on">
                 <span>{{ typeToLabel[type] }}</span>
-                <v-icon right> mdi-menu-down </v-icon>
+                <v-icon right> mdi-menu-down</v-icon>
               </v-btn>
             </template>
             <v-list>
@@ -45,19 +45,18 @@
           :weekdays="weekday"
           locale="ru-RU"
           v-model="focus"
-          @change="updateRange"
         >
           <template v-slot:event="{event }">
             <div class="ml-2">
               <template v-if="event.type === 'birthday'">
                 <v-avatar color="primary" size="15">
                   <img
-                    :src="event.avatar || `https://freesvg.org/img/abstract-user-flat-4.png`"
+                    :src="event.avatar || `https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F34574810%3Fs%3D400%26v%3D4&f=1&nofb=1`"
                     :alt="event.name"
                   />
                 </v-avatar>
               </template>
-              {{event.name}}
+              {{ event.name }}
             </div>
           </template>
         </v-calendar>
@@ -67,12 +66,14 @@
 </template>
 
 <script>
-  const data = new Date();
-  const monthCurrent = data.getMonth() + 1;
+
+
+  import birthdaysQuery from '@/graphql/queries/Birthdays.gql';
 
   export default {
     name: 'CalendarViews',
     data: () => ({
+      eventType: [],
       weekday: [1, 2, 3, 4, 5, 6, 0],
       focus: '',
       type: 'month',
@@ -81,8 +82,27 @@
         week: 'Неделя',
         day: 'День',
       },
-      events: [],
     }),
+    apollo: {
+      eventType: birthdaysQuery,
+    },
+    computed: {
+      events() {
+        const [year] = this.focus ? this.focus.split('-') :  new Date().toISOString().split('-');
+        const { color, slug, events } = this.eventType;
+        console.log(this.eventType);
+
+        return events.map(({ day, month, user, id }) => ({
+          start: `${year}-${month}-${day}`,
+          eventId: id,
+          userId: user.id,
+          name: user.name,
+          type: slug,
+          color,
+          avatar: user.avatar,
+        }));
+      },
+    },
     mounted() {
       this.$refs.calendar.checkChange();
     },
@@ -90,9 +110,6 @@
       viewDay({ date }) {
         this.focus = date;
         this.type = 'day';
-      },
-      getEventColor(event) {
-        return event.color;
       },
       setToday() {
         this.focus = '';
@@ -103,65 +120,64 @@
       next() {
         this.$refs.calendar.next();
       },
-      showEvent({ nativeEvent, event }) {
-        const open = () => {
-          this.selectedEvent = event;
-          this.selectedElement = nativeEvent.target;
-          setTimeout(() => {
-            this.selectedOpen = true;
-          }, 10);
-        };
-
-        if (this.selectedOpen) {
-          this.selectedOpen = false;
-          setTimeout(open, 10);
-        } else {
-          open();
-        }
-
-        nativeEvent.stopPropagation();
-      },
-      updateRange() {
-        const events = [
-          {
-            name: 'Weekly Meeting',
-            start: `2021-${monthCurrent}-07`,
-            end: `2021-${monthCurrent}-10`,
-            type: 'meeting',
-            color: 'grey darken-1',
-          },
-          {
-            name: 'Weekly Birthday',
-            start: `2021-${monthCurrent}-07`,
-            type: 'birthday',
-            color: 'green',
-          },
-          {
-            name: `Thomas' Birthday`,
-            start: `2021-${monthCurrent}-10`,
-            type: 'birthday',
-            color: 'green',
-          },
-          {
-            name: 'Mash Birthday',
-            start: `2021-${monthCurrent}-09`,
-            type: 'birthday',
-            color: 'green',
-          },
-          {
-            name: 'Jon Dou Birthday',
-            start: `2021-${monthCurrent}-22`,
-            type: 'birthday',
-            color: 'green',
-          },
-        ];
-
-
-        this.events = events;
-      },
-      rnd(a, b) {
-        return Math.floor((b - a + 1) * Math.random()) + a;
-      },
+      // showEvent({ nativeEvent, event }) {
+      //   const open = () => {
+      //     this.selectedEvent = event;
+      //     this.selectedElement = nativeEvent.target;
+      //     setTimeout(() => {
+      //       this.selectedOpen = true;
+      //     }, 10);
+      //   };
+      //
+      //   if (this.selectedOpen) {
+      //     this.selectedOpen = false;
+      //     setTimeout(open, 10);
+      //   } else {
+      //     open();
+      //   }
+      //
+      //   nativeEvent.stopPropagation();
+      // },
+      // updateRange() {
+      //   // const events = [
+      //   //   {
+      //   //     name: 'Weekly Meeting',
+      //   //     start: `2021-${monthCurrent}-07`,
+      //   //     end: `2021-${monthCurrent}-10`,
+      //   //     type: 'meeting',
+      //   //     color: 'grey darken-1',
+      //   //   },
+      //   //   {
+      //   //     name: 'Weekly Birthday',
+      //   //     start: `2021-${monthCurrent}-07`,
+      //   //     type: 'birthday',
+      //   //     color: 'green',
+      //   //   },
+      //   //   {
+      //   //     name: `Thomas' Birthday`,
+      //   //     start: `2021-${monthCurrent}-10`,
+      //   //     type: 'birthday',
+      //   //     color: 'green',
+      //   //   },
+      //   //   {
+      //   //     name: 'Mash Birthday',
+      //   //     start: `2021-${monthCurrent}-09`,
+      //   //     type: 'birthday',
+      //   //     color: 'green',
+      //   //   },
+      //   //   {
+      //   //     name: 'Jon Dou Birthday',
+      //   //     start: `2021-${monthCurrent}-22`,
+      //   //     type: 'birthday',
+      //   //     color: 'green',
+      //   //   },
+      //   // ];
+      //   //
+      //   // this.events = events;
+      // },
+      // rnd(a, b) {
+      //   return Math.floor((b - a + 1) * Math.random()) + a;
+      // },
     },
   };
 </script>
