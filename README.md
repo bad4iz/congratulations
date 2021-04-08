@@ -4,7 +4,7 @@
 ## Project setup
 ```
 npm install
-```
+```xcvz
 
 ### Compiles and hot-reloads for development
 ```
