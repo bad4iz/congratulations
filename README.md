@@ -1,4 +1,4 @@
-# congratulations2
+# congratulations
 
 ## Project setup
 ```
