@@ -1,5 +1,6 @@
 # congratulations
-s
+
+
 ## Project setup
 ```
 npm install
