@@ -3,4 +3,4 @@
  * @param state
  * @returns {boolean}
  */
-export const getNavDrawer = (state) => state.navDrawer;
+export const getNavDrawer = state => state.navDrawer;

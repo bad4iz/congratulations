@@ -2,7 +2,7 @@
  * мутация переключения темы приложения
  * @param state
  */
-export const toggleDark = (state) => {
+export const toggleDark = state => {
   state.settingsApp.dark = !state.settingsApp.dark;
 };
 
