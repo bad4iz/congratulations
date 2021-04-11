@@ -1,34 +1,31 @@
-# congratulations2
+DB_DATABASE=w93797r9_congrat
+DB_USERNAME=w93797r9_congrat
+DB_PASSWORD=%VHn4K8g
+congratulations-server
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+права доступа
+Kodeine / Laravel-ACL https://github.com/kodeine/laravel-acl
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Run your unit tests
-```
-npm run test:unit
+
+для бегета первая развертка
+```bash
+ln -s public public_html
 ```
 
-### Run your end-to-end tests
-```
-npm run test:e2e
+```$xslt
+
+ composer-php7.3 install
+
+ php7.3 artisan key:generate
+
+ php7.3 artisan migrate
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## для доступа к node.js
+```$xslt
+заходим в докер
+ssh localhost -p222
+```
