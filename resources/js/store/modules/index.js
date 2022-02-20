@@ -1,4 +1,4 @@
 /**
  * настройки приложения
  */
-export * from './appSettings';
+export * from "./appSettings";

@@ -1,13 +1,13 @@
-import * as actions from './actions';
-import * as getters from './getters';
-import * as mutations from './mutations';
+import * as actions from "./actions";
+import * as getters from "./getters";
+import * as mutations from "./mutations";
 
-import state from './state';
+import state from "./state";
 
 export const appSettings = {
-  actions,
-  getters,
-  mutations,
-  state,
-  namespaced: true,
+    actions,
+    getters,
+    mutations,
+    state,
+    namespaced: true,
 };

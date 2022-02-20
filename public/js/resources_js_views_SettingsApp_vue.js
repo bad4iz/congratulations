@@ -17,7 +17,7 @@
                     __webpack_exports__,
                     {
                         /* harmony export */ default: () =>
-                            __WEBPACK_DEFAULT_EXPORT__
+                            __WEBPACK_DEFAULT_EXPORT__,
                         /* harmony export */
                     }
                 );
@@ -29,7 +29,7 @@
                     if (Object.getOwnPropertySymbols) {
                         var symbols = Object.getOwnPropertySymbols(object);
                         if (enumerableOnly)
-                            symbols = symbols.filter(function(sym) {
+                            symbols = symbols.filter(function (sym) {
                                 return Object.getOwnPropertyDescriptor(
                                     object,
                                     sym
@@ -44,7 +44,7 @@
                     for (var i = 1; i < arguments.length; i++) {
                         var source = arguments[i] != null ? arguments[i] : {};
                         if (i % 2) {
-                            ownKeys(Object(source), true).forEach(function(
+                            ownKeys(Object(source), true).forEach(function (
                                 key
                             ) {
                                 _defineProperty(target, key, source[key]);
@@ -55,7 +55,7 @@
                                 Object.getOwnPropertyDescriptors(source)
                             );
                         } else {
-                            ownKeys(Object(source)).forEach(function(key) {
+                            ownKeys(Object(source)).forEach(function (key) {
                                 Object.defineProperty(
                                     target,
                                     key,
@@ -73,7 +73,7 @@
                             value: value,
                             enumerable: true,
                             configurable: true,
-                            writable: true
+                            writable: true,
                         });
                     } else {
                         obj[key] = value;
@@ -175,7 +175,7 @@
                         mapActionsAppSettings([
                             "toggleDarkAction",
                             "setPrimaryDrawerAction",
-                            "setFooterAction"
+                            "setFooterAction",
                         ])
                     ),
                     computed: _objectSpread(
@@ -184,9 +184,9 @@
                             "getDark",
                             "getDrawers",
                             "getPrimaryDrawer",
-                            "getFooter"
+                            "getFooter",
                         ])
-                    )
+                    ),
                 };
 
                 /***/
@@ -207,7 +207,7 @@
                     __webpack_exports__,
                     {
                         /* harmony export */ default: () =>
-                            __WEBPACK_DEFAULT_EXPORT__
+                            __WEBPACK_DEFAULT_EXPORT__,
                         /* harmony export */
                     }
                 );
@@ -259,7 +259,7 @@
                     __webpack_exports__,
                     {
                         /* harmony export */ default: () =>
-                            __WEBPACK_DEFAULT_EXPORT__
+                            __WEBPACK_DEFAULT_EXPORT__,
                         /* harmony export */
                     }
                 );
@@ -289,7 +289,7 @@
                         /* harmony export */ render: () =>
                             /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SettingsApp_vue_vue_type_template_id_36161faf_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
                         /* harmony export */ staticRenderFns: () =>
-                            /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SettingsApp_vue_vue_type_template_id_36161faf_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns
+                            /* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SettingsApp_vue_vue_type_template_id_36161faf_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
                         /* harmony export */
                     }
                 );
@@ -316,11 +316,11 @@
                     {
                         /* harmony export */ render: () => /* binding */ render,
                         /* harmony export */ staticRenderFns: () =>
-                            /* binding */ staticRenderFns
+                            /* binding */ staticRenderFns,
                         /* harmony export */
                     }
                 );
-                var render = function() {
+                var render = function () {
                     var _vm = this;
                     var _h = _vm.$createElement;
                     var _c = _vm._self._c || _h;
@@ -343,8 +343,8 @@
                                                         {
                                                             attrs: {
                                                                 row: "",
-                                                                wrap: ""
-                                                            }
+                                                                wrap: "",
+                                                            },
                                                         },
                                                         [
                                                             _c(
@@ -353,14 +353,14 @@
                                                                     attrs: {
                                                                         xs12:
                                                                             "",
-                                                                        md6: ""
-                                                                    }
+                                                                        md6: "",
+                                                                    },
                                                                 },
                                                                 [
                                                                     _c("span", [
                                                                         _vm._v(
                                                                             "Scheme"
-                                                                        )
+                                                                        ),
                                                                     ]),
                                                                     _vm._v(" "),
                                                                     _c(
@@ -372,7 +372,7 @@
                                                                                 label:
                                                                                     "Vuetify Theme Dark",
                                                                                 "persistent-hint":
-                                                                                    ""
+                                                                                    "",
                                                                             },
                                                                             model: {
                                                                                 value:
@@ -380,7 +380,7 @@
                                                                                         .$vuetify
                                                                                         .theme
                                                                                         .dark,
-                                                                                callback: function(
+                                                                                callback: function (
                                                                                     $$v
                                                                                 ) {
                                                                                     _vm.$set(
@@ -392,10 +392,10 @@
                                                                                     );
                                                                                 },
                                                                                 expression:
-                                                                                    "$vuetify.theme.dark"
-                                                                            }
+                                                                                    "$vuetify.theme.dark",
+                                                                            },
                                                                         }
-                                                                    )
+                                                                    ),
                                                                 ],
                                                                 1
                                                             ),
@@ -406,14 +406,14 @@
                                                                     attrs: {
                                                                         xs12:
                                                                             "",
-                                                                        md6: ""
-                                                                    }
+                                                                        md6: "",
+                                                                    },
                                                                 },
                                                                 [
                                                                     _c("span", [
                                                                         _vm._v(
                                                                             "Drawer"
-                                                                        )
+                                                                        ),
                                                                     ]),
                                                                     _vm._v(" "),
                                                                     _c(
@@ -425,23 +425,23 @@
                                                                                         .getPrimaryDrawer
                                                                                         .type,
                                                                                 column:
-                                                                                    ""
+                                                                                    "",
                                                                             },
                                                                             on: {
-                                                                                change: function(
+                                                                                change: function (
                                                                                     value
                                                                                 ) {
                                                                                     return _vm.setPrimaryDrawerAction(
                                                                                         {
-                                                                                            type: value
+                                                                                            type: value,
                                                                                         }
                                                                                     );
-                                                                                }
-                                                                            }
+                                                                                },
+                                                                            },
                                                                         },
                                                                         _vm._l(
                                                                             _vm.getDrawers,
-                                                                            function(
+                                                                            function (
                                                                                 drawer
                                                                             ) {
                                                                                 return _c(
@@ -452,8 +452,8 @@
                                                                                             label: drawer,
                                                                                             value: drawer.toLowerCase(),
                                                                                             primary:
-                                                                                                ""
-                                                                                        }
+                                                                                                "",
+                                                                                        },
                                                                                     }
                                                                                 );
                                                                             }
@@ -472,21 +472,21 @@
                                                                                 label:
                                                                                     "Clipped",
                                                                                 primary:
-                                                                                    ""
+                                                                                    "",
                                                                             },
                                                                             on: {
-                                                                                change: function(
+                                                                                change: function (
                                                                                     $event
                                                                                 ) {
                                                                                     return _vm.setPrimaryDrawerAction(
                                                                                         {
                                                                                             clipped: !_vm
                                                                                                 .getPrimaryDrawer
-                                                                                                .clipped
+                                                                                                .clipped,
                                                                                         }
                                                                                     );
-                                                                                }
-                                                                            }
+                                                                                },
+                                                                            },
                                                                         }
                                                                     ),
                                                                     _vm._v(" "),
@@ -501,21 +501,21 @@
                                                                                 label:
                                                                                     "Floating",
                                                                                 primary:
-                                                                                    ""
+                                                                                    "",
                                                                             },
                                                                             on: {
-                                                                                change: function(
+                                                                                change: function (
                                                                                     $event
                                                                                 ) {
                                                                                     return _vm.setPrimaryDrawerAction(
                                                                                         {
                                                                                             floating: !_vm
                                                                                                 .getPrimaryDrawer
-                                                                                                .floating
+                                                                                                .floating,
                                                                                         }
                                                                                     );
-                                                                                }
-                                                                            }
+                                                                                },
+                                                                            },
                                                                         }
                                                                     ),
                                                                     _vm._v(" "),
@@ -530,23 +530,23 @@
                                                                                 label:
                                                                                     "Mini",
                                                                                 primary:
-                                                                                    ""
+                                                                                    "",
                                                                             },
                                                                             on: {
-                                                                                change: function(
+                                                                                change: function (
                                                                                     $event
                                                                                 ) {
                                                                                     return _vm.setPrimaryDrawerAction(
                                                                                         {
                                                                                             mini: !_vm
                                                                                                 .getPrimaryDrawer
-                                                                                                .mini
+                                                                                                .mini,
                                                                                         }
                                                                                     );
-                                                                                }
-                                                                            }
+                                                                                },
+                                                                            },
                                                                         }
-                                                                    )
+                                                                    ),
                                                                 ],
                                                                 1
                                                             ),
@@ -557,14 +557,14 @@
                                                                     attrs: {
                                                                         xs12:
                                                                             "",
-                                                                        md6: ""
-                                                                    }
+                                                                        md6: "",
+                                                                    },
                                                                 },
                                                                 [
                                                                     _c("span", [
                                                                         _vm._v(
                                                                             "Footer"
-                                                                        )
+                                                                        ),
                                                                     ]),
                                                                     _vm._v(" "),
                                                                     _c(
@@ -580,29 +580,29 @@
                                                                                 label:
                                                                                     "Inset",
                                                                                 primary:
-                                                                                    ""
+                                                                                    "",
                                                                             },
                                                                             on: {
-                                                                                change: function(
+                                                                                change: function (
                                                                                     $event
                                                                                 ) {
                                                                                     return _vm.setFooterAction(
                                                                                         {
                                                                                             inset: !_vm
                                                                                                 .getFooter
-                                                                                                .inset
+                                                                                                .inset,
                                                                                         }
                                                                                     );
-                                                                                }
-                                                                            }
+                                                                                },
+                                                                            },
                                                                         }
-                                                                    )
+                                                                    ),
                                                                 ],
                                                                 1
-                                                            )
+                                                            ),
                                                         ],
                                                         1
-                                                    )
+                                                    ),
                                                 ],
                                                 1
                                             ),
@@ -613,27 +613,28 @@
                                                     _c("v-spacer"),
                                                     _vm._v(" "),
                                                     _c("v-btn", [
-                                                        _vm._v("Cancel")
+                                                        _vm._v("Cancel"),
                                                     ]),
                                                     _vm._v(" "),
                                                     _c(
                                                         "v-btn",
                                                         {
                                                             attrs: {
-                                                                color: "primary"
-                                                            }
+                                                                color:
+                                                                    "primary",
+                                                            },
                                                         },
                                                         [_vm._v("Submit")]
-                                                    )
+                                                    ),
                                                 ],
                                                 1
-                                            )
+                                            ),
                                         ],
                                         1
-                                    )
+                                    ),
                                 ],
                                 1
-                            )
+                            ),
                         ],
                         1
                     );
@@ -642,6 +643,6 @@
                 render._withStripped = true;
 
                 /***/
-            }
-    }
+            },
+    },
 ]);

@@ -3,13 +3,13 @@
  * @param commit
  */
 export const toggleDarkAction = ({ commit }) => {
-  commit('toggleDark');
+    commit("toggleDark");
 };
 
 export const setPrimaryDrawerAction = ({ commit }, payload) => {
-  commit('primaryDrawer', payload);
+    commit("primaryDrawer", payload);
 };
 
 export const setFooterAction = ({ commit }, payload) => {
-  commit('setFooter', payload);
+    commit("setFooter", payload);
 };

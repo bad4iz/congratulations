@@ -19,7 +19,7 @@ import configPlugin, { configEnv } from "./plugins/configEnv";
 // HTTP connection to the API
 const httpLink = createHttpLink({
     // You should use an absolute URL here
-    uri: configEnv.appUrlGraphql
+    uri: configEnv.appUrlGraphql,
 });
 
 // Cache implementation
@@ -28,11 +28,11 @@ const cache = new InMemoryCache();
 // Create the apollo client
 const apolloClient = new ApolloClient({
     link: httpLink,
-    cache
+    cache,
 });
 
 const apolloProvider = new VueApollo({
-    defaultClient: apolloClient
+    defaultClient: apolloClient,
 });
 
 Vue.use(configPlugin);
@@ -43,5 +43,5 @@ const app = new Vue({
     apolloProvider,
     vuetify,
     store,
-    render: h => h(App)
+    render: (h) => h(App),
 });

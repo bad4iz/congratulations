@@ -21,7 +21,7 @@ export const routeNavigationDrawer = [
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ "@/views/Home")
+        component: () => import(/* webpackChunkName: "about" */ "@/views/Home"),
     },
     {
         path: "/calendar",
@@ -33,8 +33,8 @@ export const routeNavigationDrawer = [
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         component: () =>
-            import(/* webpackChunkName: "about" */ "@/views/CalendarViews")
-    }
+            import(/* webpackChunkName: "about" */ "@/views/CalendarViews"),
+    },
     // {
     //     path: '/hello',
     //     to: '/hello',
@@ -82,12 +82,12 @@ export const routeNavigationDrawerFooter = [
         name: "settingsApp",
         icon: "mdi-tune",
         title: "Настройки приложения",
-        component: () => import("@/views/SettingsApp")
-    }
+        component: () => import("@/views/SettingsApp"),
+    },
 ];
 
 export const router = new Router({
     mode: "history",
     base: process.env.BASE_URL,
-    routes: [...routeNavigationDrawer, ...routeNavigationDrawerFooter]
+    routes: [...routeNavigationDrawer, ...routeNavigationDrawerFooter],
 });

@@ -5,7 +5,7 @@ const configEnv = {
     appUrlGraphql: parse(
         process.env.APP_URL_GRAPHQL,
         "http://localhost:3020/graphql"
-    )
+    ),
 };
 
 function parse(value, fallback) {
@@ -26,5 +26,5 @@ export default {
     install(Vue) {
         Vue.appConfig = configEnv;
         Vue.prototype.$appConfig = configEnv;
-    }
+    },
 };

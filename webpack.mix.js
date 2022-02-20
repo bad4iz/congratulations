@@ -14,12 +14,12 @@ let dotenvplugin = new webpack.DefinePlugin({
         NODE_ENV: JSON.stringify(process.env.NODE_ENV || "development"),
         APP_URL_GRAPHQL: JSON.stringify(
             process.env.APP_URL_GRAPHQL || "development"
-        )
-    }
+        ),
+    },
 });
 
 mix.webpackConfig({
-    plugins: [dotenvplugin]
+    plugins: [dotenvplugin],
 });
 
 /*
@@ -34,7 +34,7 @@ mix.webpackConfig({
  */
 
 mix.alias({
-    "@": path.join(__dirname, "resources/js")
+    "@": path.join(__dirname, "resources/js"),
 });
 
 mix.js("resources/js/app.js", "public/js")

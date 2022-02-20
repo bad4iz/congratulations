@@ -5,4 +5,4 @@
  * @returns {*}
  */
 export const setNavDrawerAction = ({ commit }, flag) =>
-  commit('setNavDrawer', flag);
+    commit("setNavDrawer", flag);
